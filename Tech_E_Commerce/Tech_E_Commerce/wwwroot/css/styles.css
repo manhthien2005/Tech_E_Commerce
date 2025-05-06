@@ -134,6 +134,8 @@ img {
     background-color: white;
     border-radius: 4px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 100;
 }
 
 .category-menu {
@@ -164,25 +166,82 @@ img {
         }
 
     .category-item:hover > a {
-        background-color: #f0f0f0;
-        color: #0077cc;
+        background-color: #0077cc;
+        color: white;
     }
 
+/* Enhanced Submenu Styles */
 .submenu {
     display: none;
     position: absolute;
     left: 100%;
     top: 0;
-    width: 200px;
+    width: 900px;
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 10;
+    z-index: 100;
     border-radius: 4px;
+    padding: 20px;
 }
 
 .category-item:hover .submenu {
-    display: block;
+    display: flex;
 }
+
+.submenu-section {
+    flex: 1;
+    padding: 0 15px;
+}
+
+.submenu-title {
+    color: #0077cc;
+    font-weight: 700;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.submenu-links {
+    display: flex;
+    flex-direction: column;
+}
+
+    .submenu-links a {
+        padding: 5px 0;
+        color: #333;
+        transition: color 0.3s;
+    }
+
+        .submenu-links a:hover {
+            color: #0077cc;
+            background-color: transparent;
+        }
+
+.submenu-brand-section {
+    margin-bottom: 20px;
+}
+
+.submenu-brand-title {
+    color: #ff3333;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.submenu-brand-links {
+    display: flex;
+    flex-direction: column;
+}
+
+    .submenu-brand-links a {
+        padding: 5px 0;
+        color: #333;
+        transition: color 0.3s;
+    }
+
+        .submenu-brand-links a:hover {
+            color: #0077cc;
+            background-color: transparent;
+        }
 
 /* Main Content Styles */
 main {

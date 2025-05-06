@@ -1,233 +1,142 @@
 ﻿@{
-    Layout = null;
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GearVN Clone - Trang chủ</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="top-banner">
-            <img src="/placeholder.svg?height=60&width=1200" alt="Banner khuyến mãi">
-        </div>
-        <div class="main-header">
-            <div class="container">
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="/placeholder.svg?height=40&width=150" alt="GearVN Logo">
-                    </a>
+<!-- Sidebar Categories -->
+<aside class="sidebar">
+    <ul class="category-menu">
+        <li class="category-item">
+            <a href="@Url.Action("Category", "Product", new { category = "laptop" })">
+                <i class="fas fa-laptop"></i>
+                <span>Laptop</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </li>
+        <li class="category-item">
+            <a href="@Url.Action("Category", "Product", new { category = "laptop-gaming" })">
+                <i class="fas fa-gamepad"></i>
+                <span>Laptop Gaming</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </li>
+        <li class="category-item">
+            <a href="@Url.Action("Category", "Product", new { category = "pc-gvn" })">
+                <i class="fas fa-desktop"></i>
+                <span>PC GVN</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </li>
+        <li class="category-item">
+            <a href="@Url.Action("Category", "Product", new { category = "main-cpu-vga" })">
+                <i class="fas fa-microchip"></i>
+                <span>Main, CPU, VGA</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </li>
+        <li class="category-item">
+            <a href="@Url.Action("Category", "Product", new { category = "case-nguon-tan" })">
+                <i class="fas fa-server"></i>
+                <span>Case, Nguồn, Tản</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </li>
+        <li class="category-item">
+            <a href="@Url.Action("Category", "Product", new { category = "o-cung-ram-the-nho" })">
+                <i class="fas fa-memory"></i>
+                <span>Ổ cứng, RAM, Thẻ nhớ</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </li>
+        <li class="category-item">
+            <a href="@Url.Action("Category", "Product", new { category = "loa-micro-webcam" })">
+                <i class="fas fa-volume-up"></i>
+                <span>Loa, Micro, Webcam</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </li>
+        <li class="category-item">
+            <a href="@Url.Action("Category", "Product", new { category = "man-hinh" })">
+                <i class="fas fa-tv"></i>
+                <span>Màn hình</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </li>
+    </ul>
+</aside>
+
+<!-- Main Content Area -->
+<div class="main-content">
+    <!-- Hero Banner -->
+    <div class="hero-banner">
+        <img src="/placeholder.svg?height=400&width=800" alt="Hero Banner">
+    </div>
+
+    <!-- Featured Products Section -->
+    <section class="featured-section">
+        <h2 class="section-title">Sản phẩm nổi bật</h2>
+        <div class="product-grid">
+            <!-- Example Product (keeping only one as requested) -->
+            <div class="product-card">
+                <div class="product-badge">Giảm 20%</div>
+                <div class="product-image">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Laptop Gaming">
                 </div>
-                <div class="search-bar">
-                    <input type="text" placeholder="Bạn cần tìm gì?">
-                    <button type="submit"><i class="fas fa-search"></i></button>
-                </div>
-                <div class="header-actions">
-                    <div class="action-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <div class="action-content">
-                            <span>Hotline:</span>
-                            <strong>1800.1234</strong>
-                        </div>
+                <div class="product-info">
+                    <h3 class="product-title">Laptop Gaming ABC XYZ</h3>
+                    <div class="product-specs">
+                        <span>i7-12700H</span>
+                        <span>RTX 3060</span>
+                        <span>16GB RAM</span>
+                        <span>512GB SSD</span>
                     </div>
-                    <div class="action-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div class="action-content">
-                            <span>Hệ thống</span>
-                            <strong>Showroom</strong>
-                        </div>
+                    <div class="product-price">
+                        <span class="current-price">24.990.000₫</span>
+                        <span class="old-price">29.990.000₫</span>
                     </div>
-                    <div class="action-item">
-                        <i class="fas fa-truck"></i>
-                        <div class="action-content">
-                            <span>Tra cứu</span>
-                            <strong>đơn hàng</strong>
-                        </div>
-                    </div>
-                    <div class="action-item">
-                        <i class="fas fa-shopping-cart"></i>
-                        <div class="action-content">
-                            <span>Giỏ</span>
-                            <strong>hàng</strong>
-                        </div>
-                    </div>
-                    <div class="action-item">
-                        <i class="fas fa-user"></i>
-                        <div class="action-content">
-                            <span>Đăng</span>
-                            <strong>nhập</strong>
-                        </div>
+                    <div class="product-actions">
+                        <button class="btn-add-to-cart">Thêm vào giỏ</button>
+                        <button class="btn-buy-now">Mua ngay</button>
                     </div>
                 </div>
             </div>
+            <!-- Other products would be dynamically added -->
         </div>
-        <nav class="main-nav">
-            <div class="container">
-                <ul class="service-links">
-                    <li><a href="#"><i class="fas fa-desktop"></i> Tặng màn 240Hz khi Build PC</a></li>
-                    <li><a href="#"><i class="fas fa-newspaper"></i> Tin công nghệ</a></li>
-                    <li><a href="#"><i class="fas fa-tools"></i> Dịch vụ sửa chữa</a></li>
-                    <li><a href="#"><i class="fas fa-home"></i> Dịch vụ kỹ thuật tại nhà</a></li>
-                    <li><a href="#"><i class="fas fa-exchange-alt"></i> Thu cũ đổi mới</a></li>
-                    <li><a href="#"><i class="fas fa-shield-alt"></i> Tra cứu bảo hành</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    </section>
 
-    <!-- Main Content -->
-    <main>
-        <div class="container">
-            <!-- Sidebar Categories -->
-            <aside class="sidebar">
-                <ul class="category-menu">
-                    <li class="category-item">
-                        <a href="category.html">
-                            <i class="fas fa-laptop"></i>
-                            <span>Laptop Gaming</span>
-                            <i class="fas fa-chevron-right"></i>
-                        </a>
-                        <div class="submenu">
-                            <!-- Submenu content would go here -->
-                        </div>
-                    </li>
-                    <!-- Other categories would be dynamically added -->
-                </ul>
-            </aside>
+    <!-- Promotional Banners -->
+    <section class="promo-banners">
+        <div class="promo-banner">
+            <img src="/placeholder.svg?height=150&width=380" alt="Khuyến mãi">
+        </div>
+        <div class="promo-banner">
+            <img src="/placeholder.svg?height=150&width=380" alt="Khuyến mãi">
+        </div>
+        <div class="promo-banner">
+            <img src="/placeholder.svg?height=150&width=380" alt="Khuyến mãi">
+        </div>
+    </section>
 
-            <!-- Main Content Area -->
-            <div class="main-content">
-                <!-- Hero Banner -->
-                <div class="hero-banner">
-                    <img src="/placeholder.svg?height=400&width=800" alt="Hero Banner">
+    <!-- Flash Sale Section -->
+    <section class="flash-sale">
+        <div class="section-header">
+            <h2 class="section-title">Flash Sale</h2>
+            <div class="countdown">
+                <span>Kết thúc sau:</span>
+                <div class="timer">
+                    <span id="hours">00</span>:
+                    <span id="minutes">00</span>:
+                    <span id="seconds">00</span>
                 </div>
-
-                <!-- Featured Products Section -->
-                <section class="featured-section">
-                    <h2 class="section-title">Sản phẩm nổi bật</h2>
-                    <div class="product-grid">
-                        <!-- Example Product (keeping only one as requested) -->
-                        <div class="product-card">
-                            <div class="product-badge">Giảm 20%</div>
-                            <div class="product-image">
-                                <img src="/placeholder.svg?height=200&width=200" alt="Laptop Gaming">
-                            </div>
-                            <div class="product-info">
-                                <h3 class="product-title">Laptop Gaming ABC XYZ</h3>
-                                <div class="product-specs">
-                                    <span>i7-12700H</span>
-                                    <span>RTX 3060</span>
-                                    <span>16GB RAM</span>
-                                    <span>512GB SSD</span>
-                                </div>
-                                <div class="product-price">
-                                    <span class="current-price">24.990.000₫</span>
-                                    <span class="old-price">29.990.000₫</span>
-                                </div>
-                                <div class="product-actions">
-                                    <button class="btn-add-to-cart">Thêm vào giỏ</button>
-                                    <button class="btn-buy-now">Mua ngay</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Other products would be dynamically added -->
-                    </div>
-                </section>
-
-                <!-- Promotional Banners -->
-                <section class="promo-banners">
-                    <div class="promo-banner">
-                        <img src="/placeholder.svg?height=150&width=380" alt="Khuyến mãi">
-                    </div>
-                    <div class="promo-banner">
-                        <img src="/placeholder.svg?height=150&width=380" alt="Khuyến mãi">
-                    </div>
-                    <div class="promo-banner">
-                        <img src="/placeholder.svg?height=150&width=380" alt="Khuyến mãi">
-                    </div>
-                </section>
-
-                <!-- Flash Sale Section -->
-                <section class="flash-sale">
-                    <div class="section-header">
-                        <h2 class="section-title">Flash Sale</h2>
-                        <div class="countdown">
-                            <span>Kết thúc sau:</span>
-                            <div class="timer">
-                                <span id="hours">00</span>:
-                                <span id="minutes">00</span>:
-                                <span id="seconds">00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-slider">
-                        <!-- Products would be dynamically added -->
-                    </div>
-                </section>
             </div>
         </div>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-column">
-                    <h3>Về GearVN</h3>
-                    <ul>
-                        <li><a href="#">Giới thiệu</a></li>
-                        <li><a href="#">Tuyển dụng</a></li>
-                        <li><a href="#">Tin tức</a></li>
-                        <li><a href="#">Liên hệ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Chính sách</h3>
-                    <ul>
-                        <li><a href="#">Chính sách bảo hành</a></li>
-                        <li><a href="#">Chính sách thanh toán</a></li>
-                        <li><a href="#">Chính sách vận chuyển</a></li>
-                        <li><a href="#">Chính sách bảo mật</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Hỗ trợ khách hàng</h3>
-                    <ul>
-                        <li><a href="#">Hướng dẫn mua hàng</a></li>
-                        <li><a href="#">Hướng dẫn thanh toán</a></li>
-                        <li><a href="#">Hướng dẫn trả góp</a></li>
-                        <li><a href="#">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Thông tin liên hệ</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Đường ABC, Quận XYZ, TP. HCM</p>
-                    <p><i class="fas fa-phone-alt"></i> Hotline: 1800.1234</p>
-                    <p><i class="fas fa-envelope"></i> Email: support@gearvn.com</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 GearVN Clone. All rights reserved.</p>
-            </div>
+        <div class="product-slider">
+            <!-- Products would be dynamically added -->
         </div>
-    </footer>
+    </section>
+</div>
 
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
-    <script src="js/slider.js"></script>
-    <script src="js/countdown.js"></script>
-</body>
-</html>
+@section Scripts {
+    <script src="~/js/countdown.js"></script>
+    <script src="~/js/slider.js"></script>
+}

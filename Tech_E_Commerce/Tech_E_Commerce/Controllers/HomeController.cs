@@ -18,6 +18,11 @@ namespace Tech_E_Commerce.Controllers
             return View();
         }
 
+        public IActionResult Product()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
